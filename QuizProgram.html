@@ -1,0 +1,111 @@
+<html>
+  <head>
+    <title>Quiz Program</title>
+
+    <script>
+    var score = 0;
+    var questionCount = 0;
+    var answer = 0;
+    var allquestions = '';
+    function gradeQuiz()
+    {
+      questionCount = questionCount + 1
+      answer = document.getElementById("answer").value;
+      allquestions = allquestions + document.getElementById("question").innerHTML;
+
+      if(questionCount == 1)
+      {
+        if(answer == 7)
+        {
+           score = score + 1;
+        }
+        allquestions = allquestions  + " " + 7 + "<br>";
+        document.getElementById("question").innerHTML = "2. How many countries in the World?"
+        document.getElementById("answer").value = '';
+     }
+
+    if(questionCount == 2)
+     {
+      if(answer == 195)
+      {
+        score = score + 1;
+      }
+      allquestions = allquestions  + " " + 195 + "<br>";
+      document.getElementById("question").innerHTML = "3. How many Continents in the World?"
+      document.getElementById("answer").value = '';
+     }
+
+    end();
+    }
+    function end()
+    {
+         if( questionCount == 3)
+         {
+          if(answer == 7)
+          {
+             score = score + 1;
+          }
+          allquestions = allquestions  + " " + 7 + "<br>";
+          document.getElementById("question").style.visibility ="hidden"
+          document.getElementById("button").style.visibility ="hidden"
+          document.getElementById("answer").style.visibility ="hidden"
+          document.getElementById("end").innerHTML ="You Scored a " + score + "/3<br><br>";
+          document.getElementById("allquestions").innerHTML = allquestions;
+         }
+    }
+   </script>
+
+   <style>
+   body
+   {
+     background-color: PaleVioletRed;
+   }
+   span
+   {
+     font-size: 20px;
+     font-style:italic;
+     color: White;
+   }
+   h2
+   {
+     font-size: 30px;
+     font-style: italic;
+     color: white
+   }
+   .button
+   {
+     background-color: white;
+     color: PaleVioletRed;
+     padding: 10px 5px;
+     text-align: center;
+     text-decoration: none;
+     display: inline-block;
+     font-size: 10px;
+     font-style: italic;
+   }
+   .text
+   {
+     background-color: white;
+     font-size: 20px;
+     height: 35px;
+     font-style: italic;
+     color: PaleVioletRed;
+   }
+
+  </style>
+
+  </head>
+
+  <body>
+    <center>
+    <h2 id = "title"> Grishma's Fun Quiz! </h2>
+  </center>
+  <br><hr>
+    <span id = "end"></span>
+    <span id = "allquestions"></span>
+    <span id = "question">1. How many oceans are there in total?</span>
+    <input type = "text" id = "answer" class = "text">
+    <input id = "button" class = "button" type = "button" value = "Submit Answer" onclick= "gradeQuiz()">
+
+  </body>
+</html>
